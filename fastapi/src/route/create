@@ -35,7 +35,7 @@ Check for:
   • uvicorn
 
 8. Create main file
-  • touch main.py
+  • type nul > main.py
 
 Final structure
   • fastapi/
