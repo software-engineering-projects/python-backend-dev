@@ -1,0 +1,24 @@
+1. Open main.py
+• Open the file in your editor
+
+2. Add FastAPI app
+• Write:
+  • from fastapi import FastAPI
+  • app = FastAPI()
+
+3. Create your first route
+• Add below:
+  • @app.get("/test")
+  • def test_route():
+      return {"message": "API is working"}
+
+4. Run the server
+• In terminal (inside C:\fastapi and venv activated):
+  • uvicorn main:app --reload
+
+5. Test it
+• Open browser:
+  • http://127.0.0.1:8000/test
+
+Expected output
+• {"message": "API is working"}
