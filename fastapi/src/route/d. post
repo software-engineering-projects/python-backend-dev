@@ -1,0 +1,41 @@
+Create POST route (accept JSON input)
+
+1. Update main.py
+
+• Add this below your existing route:
+
+  • from pydantic import BaseModel
+
+  • class Item(BaseModel):
+      • name: str
+      • value: int
+
+  • @app.post("/data")
+  • def receive_data(item: Item):
+      • return {"received": item}
+
+2. Restart not needed
+• Because you used --reload, changes auto-apply
+
+3. Test it
+
+• Open:
+  • http://127.0.0.1:8000/docs
+
+Then:
+• Find /data
+• Click “Try it out”
+• Input:
+  • {
+      "name": "test",
+      "value": 123
+    }
+• Click “Execute”
+
+Expected output
+• {
+    "received": {
+      "name": "test",
+      "value": 123
+    }
+  }
