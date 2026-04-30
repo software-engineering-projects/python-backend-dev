@@ -14,7 +14,7 @@ F --> H[Client]
 G --> H
 ```
 
-```python
+```js
 Routes (endpoints)
 
 • A route maps a URL → a specific function in your backend
