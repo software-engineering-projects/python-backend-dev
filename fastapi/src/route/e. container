@@ -1,0 +1,39 @@
+1. Add a storage container
+
+• At the top of main.py (below app = FastAPI()):
+
+  • items = []
+
+2. Modify your POST route
+
+• Update /data:
+
+  • @app.post("/data")
+  • def receive_data(item: Item):
+      • items.append(item)
+      • return {"message": "saved", "data": item}
+
+3. Add a GET route to view stored data
+
+• Add:
+
+  • @app.get("/data")
+  • def get_data():
+      • return items
+
+4. Test flow
+
+POST:
+• Send:
+  • {
+      "name": "test",
+      "value": 123
+    }
+
+GET:
+• Open:
+  • http://127.0.0.1:8000/data
+
+Expected behavior
+• POST → stores data in memory
+• GET → returns all stored items
