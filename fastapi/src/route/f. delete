@@ -1,0 +1,59 @@
+A) Add DELETE endpoint
+
+1. Add ID to stored items
+
+• Update your model:
+
+  • from pydantic import BaseModel
+
+  • class Item(BaseModel):
+      • id: int
+      • name: str
+      • value: int
+
+2. Update storage
+
+• items = []
+• (No change, just note we now store id too)
+
+3. Update POST endpoint
+
+• Modify /data:
+
+  • @app.post("/data")
+  • def receive_data(item: Item):
+      • items.append(item)
+      • return {"message": "saved", "data": item}
+
+4. Add DELETE endpoint
+
+• @app.delete("/data/{item_id}")
+• def delete_item(item_id: int):
+    • for item in items:
+        • if item.id == item_id:
+            • items.remove(item)
+            • return {"message": "deleted", "id": item_id}
+    
+    • return {"message": "not found"}
+
+5. Test it
+
+POST example:
+• {
+    "id": 1,
+    "name": "test",
+    "value": 123
+  }
+
+DELETE:
+• /data/1
+
+Expected behavior
+
+After POST:
+• [
+    {"id": 1, "name": "test", "value": 123}
+  ]
+
+After DELETE:
+• []
