@@ -1,0 +1,44 @@
+
+Turn OFF the server
+
+• Go to the terminal where this is running:
+  • Uvicorn running on http://127.0.0.1:8000
+
+• Then press:
+  • CTRL + C
+
+• This stops the server
+
+----------------------------------------
+
+Turn ON the server again
+
+• Open terminal
+
+• Go to your project folder:
+  • cd C:\fastapi
+
+• Activate virtual environment:
+  • venv\Scripts\activate
+
+• Start FastAPI server:
+  • python -m uvicorn main:app --reload
+
+----------------------------------------
+
+What each part means
+
+• main
+  • your file (main.py)
+
+• app
+  • FastAPI instance inside it
+
+• --reload
+  • auto-restarts when you change code
+
+----------------------------------------
+
+When restarted, API is available at:
+
+• http://127.0.0.1:8000/docs
