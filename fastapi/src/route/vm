@@ -1,0 +1,36 @@
+1. Create project folder (VM workspace)
+• mkdir fastapi
+• cd fastapi
+
+2. Create virtual environment (VM)
+• python -m venv venv
+
+3. Activate virtual environment
+
+• Windows:
+  • venv\Scripts\activate
+
+• Mac/Linux:
+  • source venv/bin/activate
+
+4. Upgrade pip
+• python -m pip install --upgrade pip
+
+5. Install dependencies
+• pip install fastapi uvicorn
+
+6. Confirm installation
+• pip list
+
+Check:
+• fastapi
+• uvicorn
+
+7. Create project file
+• Inside fastapi/:
+  • touch main.py
+
+8. Final structure
+• fastapi/
+  ├── venv/
+  └── main.py
