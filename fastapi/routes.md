@@ -14,7 +14,7 @@ F --> H[Client]
 G --> H
 ```
 
-```ini
+```python
 Routes (endpoints)
 
 • A route maps a URL → a specific function in your backend
