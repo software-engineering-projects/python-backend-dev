@@ -1,0 +1,39 @@
+1. What is a framework
+  • A predefined structure that organizes your code
+  • Handles common backend tasks (routing, requests, responses)
+
+2. Why it’s important
+  • You don’t build everything from scratch
+  • Gives structure to your API
+  • Lets you focus on business logic
+
+3. Basic structure of FastAPI
+
+Core components:
+
+1. App (entry point)
+  • Central object
+  • All routes are attached here
+
+2. Routes (endpoints)
+  • Map URL → function
+  • Example:
+    • /users
+    • /validate
+
+3. Function (logic)
+  • Runs when route is called
+  • Handles processing
+
+4. Models (data structure)
+  • Define expected input/output
+  • Used for validation
+
+Minimal structure:
+  • App
+    ├── Routes
+    │     └── Functions
+    │             └── Models
+
+Request flow:
+  • Client → Route → Function → Response
