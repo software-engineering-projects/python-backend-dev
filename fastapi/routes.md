@@ -15,7 +15,6 @@ G --> H
 ```
 
 ```
-/*
 Routes (endpoints)
 
 • A route maps a URL → a specific function in your backend
@@ -44,6 +43,6 @@ Routes (endpoints)
   • Route matches /users
   • Corresponding function runs
   • Function returns response
-*/
+
 ```
 
