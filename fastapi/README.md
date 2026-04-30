@@ -1,3 +1,5 @@
+[fastapi course](https://www.udemy.com/course/fastapi-the-complete-course/learn/lecture/29025454#overview)
+
 ```
 Project Prompt: FastAPI Backend Learning Build
 
