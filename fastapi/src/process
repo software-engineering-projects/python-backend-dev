@@ -96,7 +96,7 @@ Key idea:
 --------------------------------------------------
 
 One-line intuition
-  GET → reads data
-  POST → adds data
-  PUT → updates data
+  GET    → reads data
+  POST   → adds data
+  PUT    → updates data
   DELETE → removes data
