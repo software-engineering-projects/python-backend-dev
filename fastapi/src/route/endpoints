@@ -1,0 +1,72 @@
+What you just described (correct mental model)
+
+HTTP methods in your API:
+
+• GET    → read data
+• POST   → add data
+• PUT    → update data
+• DELETE → remove data
+
+--------------------------------------------------
+
+How your current system actually works
+
+Each request follows the same pipeline:
+
+• HTTP request
+  → FastAPI route matching
+  → Python function execution
+  → operations on `items` (in-memory list)
+  → JSON response returned
+
+--------------------------------------------------
+
+Breaking it down
+
+Endpoints = URLs
+• /data
+• /data/{id}
+
+Methods = action type
+• GET    → retrieve
+• POST   → create
+• PUT    → modify
+• DELETE → remove
+
+Storage layer (very important)
+• items = []
+• lives only in RAM
+• resets when server restarts
+
+--------------------------------------------------
+
+Key architecture idea
+
+Right now your system is:
+
+• Stateless API layer (FastAPI)
+• Temporary state layer (Python list)
+
+No database means:
+• No persistence
+• No history
+• No recovery after restart
+
+--------------------------------------------------
+
+Final mental model
+
+• Endpoint = “WHERE”
+• HTTP method = “WHAT ACTION”
+• Function = “HOW IT HAPPENS”
+• items = “TEMPORARY MEMORY”
+
+Flow:
+
+Client
+ → chooses endpoint + method
+ → sends request
+ → FastAPI routes it
+ → Python function runs
+ → modifies or reads items
+ → returns JSON response
