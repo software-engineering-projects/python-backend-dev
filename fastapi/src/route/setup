@@ -1,0 +1,62 @@
+Why you manually paste JSON now
+
+Because your current setup:
+
+• has no database
+• uses only in-memory storage:
+  • items = []
+
+--------------------------------------------------
+
+What this means
+
+POST:
+• Adds data into RAM (temporary memory)
+• Nothing is saved permanently
+
+GET:
+• Reads directly from the same in-memory list
+
+--------------------------------------------------
+
+Why you manually send JSON
+
+• There is no frontend application yet
+• FastAPI is only exposing API endpoints
+• Swagger UI (/docs) acts as your “temporary client”
+
+So right now:
+• You are not building an app UI
+• You are manually acting as the client
+
+--------------------------------------------------
+
+Key idea
+
+Current architecture:
+
+• Swagger UI = client (manual request tool)
+• FastAPI = backend server
+• items list = temporary storage (RAM)
+
+--------------------------------------------------
+
+Important behavior
+
+• If server stops:
+  • All data is lost
+
+• If server restarts:
+  • items = [] again (fresh memory)
+
+--------------------------------------------------
+
+Big picture
+
+JSON input is not “manual work”
+• It is how APIs communicate
+
+You are just simulating what a real app would do:
+• frontend → sends JSON automatically
+• mobile app → sends JSON automatically
+• now → you send it manually for learning
