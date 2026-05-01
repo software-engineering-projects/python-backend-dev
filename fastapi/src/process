@@ -92,3 +92,11 @@ Key idea:
 • Python function = logic
 • `items` = temporary memory store
 • JSON = communication format
+
+--------------------------------------------------
+
+One-line intuition
+  GET → reads data
+  POST → adds data
+  PUT → updates data
+  DELETE → removes data
