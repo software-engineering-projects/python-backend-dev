@@ -1,0 +1,94 @@
+What actually happens (in your current system)
+
+1. GET
+
+• User → Server → Response
+
+• Browser sends request:
+  • GET /data
+
+• FastAPI:
+  • Finds matching route
+  • Runs Python function
+
+• Function:
+  • Reads data from `items` (in memory)
+
+• Response:
+  • Data returned as JSON
+  • Browser displays JSON
+
+• Important:
+  • No HTML processing
+  • No “rendering” step
+  • Just JSON over HTTP
+
+--------------------------------------------------
+
+2. POST
+
+• User → Server → Store data → Response
+
+• Client sends:
+  • JSON body to /data
+
+• FastAPI:
+  • Validates input using Item model
+
+• Function:
+  • Appends data to `items`
+
+• Server response:
+  • Confirmation JSON returned
+
+--------------------------------------------------
+
+3. PUT
+
+• User → Server → Modify existing data → Response
+
+• Client sends:
+  • ID + updated JSON
+
+• FastAPI:
+  • Finds item with matching ID in `items`
+
+• Function:
+  • Replaces existing data
+
+• Response:
+  • Updated item returned
+
+--------------------------------------------------
+
+4. DELETE
+
+• User → Server → Remove data → Response
+
+• Client sends:
+  • ID in URL (/data/1)
+
+• FastAPI:
+  • Locates item in `items`
+
+• Function:
+  • Removes item from memory
+
+• Response:
+  • Success or not-found message
+
+--------------------------------------------------
+
+Correct simplified flow (mental model)
+
+• Request
+  → FastAPI route matching
+  → Python function execution
+  → In-memory data operation (items)
+  → JSON response returned
+
+Key idea:
+• FastAPI = traffic controller
+• Python function = logic
+• `items` = temporary memory store
+• JSON = communication format
