@@ -37,3 +37,53 @@ It:
 
 * @app.get → only handles GET requests
 * If you send POST to /test → it won’t work
+---
+```
+Why?
+
+• return {"message": "API is working"}
+  • This sends the response back to the client (browser / Swagger)
+  • It does NOT print anything to your terminal
+
+--------------------------------------------------
+
+What the terminal shows instead
+
+• Server logs (from Uvicorn), like:
+  • Server started
+  • Request received (GET /test)
+  • Status code (200 OK)
+
+Example:
+• GET /test 200 OK
+
+--------------------------------------------------
+
+If you want to see something in the terminal
+
+You need to explicitly print it:
+
+• Inside your function:
+  • print("test_route was called")
+
+Now when you hit /test:
+• Terminal → shows the print output
+• Browser → still gets the JSON response
+
+--------------------------------------------------
+
+Mental model
+
+• return → goes to client
+• print → goes to terminal (server side)
+
+--------------------------------------------------
+
+So:
+
+• Browser / Swagger:
+  • {"message": "API is working"}
+
+• Terminal:
+  • Only logs unless you add print()
+```
