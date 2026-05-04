@@ -39,6 +39,8 @@ It:
 * If you send POST to /test → it won’t work
 ---
 ```
+No—you won’t see that message in the terminal by default.
+
 Why?
 
 • return {"message": "API is working"}
