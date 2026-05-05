@@ -42,19 +42,14 @@ It does NOT store data (database does)
 **Conceptually:**
 id | name | age
 
-## Full System Flow
+# System Action Flow
 
-**Registration flow**
-UI → POST /register → API → INSERT DB → response → UI
-
-**View profile**
-UI → GET /user/{id} → API → SELECT DB → response → UI
-
-**Update profile**
-UI → PUT /user/{id} → API → UPDATE DB → response → UI
-
-**Delete account**
-UI → DELETE /user/{id} → API → DELETE DB → response → UI
+| Action         | Flow                                                     |
+| -------------- | -------------------------------------------------------- |
+| Registration   | UI → POST /register → API → INSERT DB → response → UI    |
+| View profile   | UI → GET /user/{id} → API → SELECT DB → response → UI    |
+| Update profile | UI → PUT /user/{id} → API → UPDATE DB → response → UI    |
+| Delete account | UI → DELETE /user/{id} → API → DELETE DB → response → UI |
 
 ## Backend Endpoint Structure (concept only)
 
