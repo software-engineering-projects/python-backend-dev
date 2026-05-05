@@ -63,16 +63,16 @@ document.getElementById("profileForm").addEventListener("submit", async function
 6. UI displays result
 
 ### Important concept
-HTML does NOT talk to database. Only FastAPI talks to database.
+- HTML does NOT talk to database. Only FastAPI talks to database.
 
 **Correct Flow:**
-HTML → FastAPI → PostgreSQL
+- HTML → FastAPI → PostgreSQL
 
 **Incorrect Flow:**
-HTML → PostgreSQL
+- HTML → PostgreSQL
 
 ### Step 3 — Fix CORS (important)
-Because the UI and API are separate origins, add this to `main.py`:
+- Because the UI and API are separate origins, add this to `main.py`:
 
 ```python
 from fastapi.middleware.cors import CORSMiddleware
