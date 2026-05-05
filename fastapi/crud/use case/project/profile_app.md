@@ -1,6 +1,28 @@
 
 # System Design: profile_app
 
+```mermaid
+flowchart LR
+
+UI[UI - Profile App]
+
+subgraph Backend
+API[FastAPI Backend]
+end
+
+DB[(PostgreSQL Database)]
+
+UI -->|POST /register| API
+UI -->|GET /user/{id}| API
+UI -->|PUT /user/{id}| API
+UI -->|DELETE /user/{id}| API
+
+API -->|INSERT / SELECT / UPDATE / DELETE| DB
+DB --> API
+API --> UI
+```
+---
+
 ## Goal
 A simple full-cycle system:
 UI → API (FastAPI) → PostgreSQL → API → UI
