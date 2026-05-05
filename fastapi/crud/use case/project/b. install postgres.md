@@ -5,7 +5,7 @@
 Your terminal should show:
 
 ```powershell
-(venv) PS C:\profile-app\app>
+C:\profile-app\venv\   ✔ correct
 ```
 
 If it is not active, run:
