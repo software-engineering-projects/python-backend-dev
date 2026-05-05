@@ -5,18 +5,10 @@
 flowchart LR
 
 UI[UI - Profile App]
-
-subgraph Backend
 API[FastAPI Backend]
-end
-
 DB[(PostgreSQL Database)]
 
-UI -->|POST /register| API
-UI -->|GET /user/{id}| API
-UI -->|PUT /user/{id}| API
-UI -->|DELETE /user/{id}| API
-
+UI --> API
 API --> DB
 DB --> API
 API --> UI
