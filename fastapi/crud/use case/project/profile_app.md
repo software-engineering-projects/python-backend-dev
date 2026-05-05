@@ -17,7 +17,7 @@ UI -->|GET /user/{id}| API
 UI -->|PUT /user/{id}| API
 UI -->|DELETE /user/{id}| API
 
-API -->|INSERT / SELECT / UPDATE / DELETE| DB
+API --> DB
 DB --> API
 API --> UI
 ```
