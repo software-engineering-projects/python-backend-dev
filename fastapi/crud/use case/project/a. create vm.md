@@ -14,7 +14,7 @@ cd profile-app
 Inside `profile-app` run:
 
 ```cmd
-python -m venv app
+python -m venv venv
 ```
 
 **Project Structure:**
