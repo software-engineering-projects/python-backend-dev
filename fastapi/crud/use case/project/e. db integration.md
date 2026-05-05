@@ -3,10 +3,10 @@
 ### What we are building now
 
 You are upgrading from:
-UI → FastAPI → return data (temporary)
+- UI → FastAPI → return data (temporary)
 
 to:
-UI → FastAPI → PostgreSQL → stored profile (permanent)
+- UI → FastAPI → PostgreSQL → stored profile (permanent)
 
 ### Goal of this step
 
@@ -17,7 +17,7 @@ POST /profile
 
 ### Step 1 — Create real endpoint
 
-In main.py, you will replace your test endpoint with a real one:
+- In main.py, you will replace your test endpoint with a real one:
 
 ```python
 from db import get_connection
@@ -95,22 +95,22 @@ Then:
 ### What changed in your system
 
 Before:
-API = temporary response generator
+- API = temporary response generator
 
 Now:
-API = writes real data into PostgreSQL
+- API = writes real data into PostgreSQL
 
 ### Important milestone you just hit
 
 You now have:
-FIRST REAL DATABASE WRITE OPERATION
+- FIRST REAL DATABASE WRITE OPERATION
 
 This is the core of backend systems.
 
 ### Next step
 
 If this works, we move to:
-GET /profile → retrieve data from PostgreSQL
+- GET /profile → retrieve data from PostgreSQL
 
 So you can see full CRUD cycle:
-CREATE → READ → UPDATE → DELETE
+- CREATE → READ → UPDATE → DELETE
