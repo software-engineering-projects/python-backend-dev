@@ -18,8 +18,8 @@ If it is not active, run:
 
 Run:
 
-```cmd
-pip install psycopg2-binary
+```powershell
+python -m pip install psycopg2-binary
 ```
 
 ### 3. Verify installation
