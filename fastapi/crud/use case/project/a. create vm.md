@@ -49,9 +49,67 @@ From now on:
 *   Install packages (FastAPI, uvicorn) inside the `(app)` environment.
 *   Run your backend inside this environment only.
 
-### Next Steps
+### STEP 4: Install FastAPI + Uvicorn
 
-Once the environment is active, the process will proceed to:
-1. Install fastapi and uvicorn.
-2. Create the application structure.
-3. Run the first API endpoint.
+Now that your venv is active (app), run:
+
+```cmd
+pip install fastapi uvicorn
+```
+
+### STEP 5: Verify installation
+
+Run:
+
+```cmd
+pip list
+```
+
+You should see:
+* fastapi
+* uvicorn
+
+### STEP 6: Create app folder
+
+This is where your backend code lives. Run:
+
+```cmd
+mkdir app
+cd app
+```
+
+### STEP 7: Create main file
+
+```cmd
+type nul > main.py
+```
+
+### Current structure
+
+```text
+profile-app/
+├── app/              <-- venv
+├── app/              <-- backend code folder
+│   └── main.py
+```
+
+*Note: Having the same name "app" for both the virtual environment and the code folder is normal for learning.*
+
+### STEP 8: Run server
+
+Go inside the backend folder:
+
+```cmd
+cd app
+```
+
+Then run:
+
+```cmd
+python -m uvicorn main:app --reload
+```
+
+### Expected result
+
+You should see:
+`Uvicorn running on http://127.0.0.1:8000`
